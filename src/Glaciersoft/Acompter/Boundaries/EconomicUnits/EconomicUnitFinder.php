@@ -17,7 +17,7 @@ namespace Glaciersoft\Acompter\Boundaries\EconomicUnits
     // Use directives (A...Z)
 
     /**
-     * Interface FindEconomicUnitByName
+     * Interface EconomicUnitFinder
      *
      * @package     Glaciersoft\Acompter\Boundaries\EconomicUnits
      * @author      Frederik Krautwald <frederik.krautwald@glaciersoft.com>
@@ -27,7 +27,7 @@ namespace Glaciersoft\Acompter\Boundaries\EconomicUnits
      * @link        http://glaciersoft.com
      * @since       File available since Release 1.0.0
      */
-    interface FindEconomicUnitByName
+    interface EconomicUnitFinder
     {
         /**
          * @param string $name
@@ -39,4 +39,4 @@ namespace Glaciersoft\Acompter\Boundaries\EconomicUnits
     }
 }
 //
-// EOF: FindEconomicUnitByName.php
+// EOF: EconomicUnitFinder.php
