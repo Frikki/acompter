@@ -17,7 +17,7 @@ namespace Glaciersoft\Acompter\Interactors\EconomicUnits
     // Use directives (A...Z)
     use
         Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitResponseRecipient;
-    use Glaciersoft\Acompter\Boundaries\EconomicUnits\FindEconomicUnitByName;
+    use Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitFinder;
 
     /**
      * Class FindEconomicUnitByNameInteractor
@@ -32,7 +32,7 @@ namespace Glaciersoft\Acompter\Interactors\EconomicUnits
      */
     class FindEconomicUnitByNameInteractor
         extends EconomicUnitInteractor
-        implements FindEconomicUnitByName
+        implements EconomicUnitFinder
     {
         /**
          * @param string $name
