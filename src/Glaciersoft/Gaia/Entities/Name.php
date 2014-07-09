@@ -28,14 +28,14 @@ namespace Glaciersoft\Gaia\Entities
      * @link        http://glaciersoft.com
      * @since       File available since Release 1.0.0
      */
-    class Name
+    abstract class Name
         extends SelfValidator
-        implements Nameable, Validatory
+        implements StringRepresentation, Validatory
     {
         /**
          * @var string
          */
-        private $value;
+        protected $value;
 
         /**
          * @param $value
@@ -46,19 +46,6 @@ namespace Glaciersoft\Gaia\Entities
         {
             $this->value = preg_replace('/\s+/', ' ', trim($value));
         }
-
-        /**
-         * @return string
-         */
-        public function value()
-        {
-            return $this->value;
-        }
-
-        /**
-         * @return void
-         */
-        protected function validate() { }
     }
 }
 //

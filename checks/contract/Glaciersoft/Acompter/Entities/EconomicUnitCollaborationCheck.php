@@ -58,7 +58,7 @@ namespace checks\contract\Glaciersoft\Acompter\Entities\EconomicUnits
         {
             // Arrange
             $nameStub =
-                $this->getMockBuilder('Glaciersoft\Gaia\Entities\Nameable')
+                $this->getMockBuilder('Glaciersoft\Gaia\Entities\StringRepresentation')
                     ->getMock();
 
             $constraint = 'name';
@@ -81,7 +81,7 @@ namespace checks\contract\Glaciersoft\Acompter\Entities\EconomicUnits
         {
             // Arrange
             $nameStub =
-                $this->getMockBuilder('Glaciersoft\Gaia\Entities\Nameable')
+                $this->getMockBuilder('Glaciersoft\Gaia\Entities\StringRepresentation')
                     ->getMock();
 
             $constraint = 'legalName';

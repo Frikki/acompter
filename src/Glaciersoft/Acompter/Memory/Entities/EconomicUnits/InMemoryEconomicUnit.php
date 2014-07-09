@@ -316,7 +316,7 @@ namespace Glaciersoft\Acompter\Memory\Entities\EconomicUnits
         {
             $this->addRule(
                 'name',
-                'Nameable cannot be an empty string.',
+                'StringRepresentation cannot be an empty string.',
                 '' === $this->name()->value()
             );
         }

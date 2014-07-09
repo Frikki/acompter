@@ -15,7 +15,7 @@
 namespace Glaciersoft\Acompter\Entities
 {
     // Use directives (A...Z)
-    use Glaciersoft\Gaia\Entities\Nameable;
+    use Glaciersoft\Gaia\Entities\StringRepresentation;
     use Glaciersoft\Gaia\Entities\Validators\SelfValidator;
     use Glaciersoft\Gaia\Entities\Validatory;
 
@@ -35,12 +35,12 @@ namespace Glaciersoft\Acompter\Entities
         implements Validatory
     {
         /**
-         * @return Nameable
+         * @return StringRepresentation
          */
         public abstract function name();
 
         /**
-         * @return Nameable
+         * @return StringRepresentation
          */
         public abstract function legalName();
 

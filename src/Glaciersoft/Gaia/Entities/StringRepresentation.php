@@ -17,7 +17,7 @@ namespace Glaciersoft\Gaia\Entities
     // Use directives (A...Z)
 
     /**
-     * Interface Nameable
+     * Interface StringRepresentation
      *
      * @package     Glaciersoft\Gaia\Entities
      * @author      Frederik Krautwald <frederik.krautwald@glaciersoft.com>
@@ -27,13 +27,13 @@ namespace Glaciersoft\Gaia\Entities
      * @link        http://glaciersoft.com
      * @since       File available since Release 1.0.0
      */
-    interface Nameable
+    interface StringRepresentation
     {
         /**
          * @return string
          */
-        public function value();
+        public function __toString();
     }
 }
 //
-// EOF: Nameable.php
+// EOF: StringRepresentation.php

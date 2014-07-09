@@ -17,7 +17,7 @@ namespace checks\contract\Glaciersoft\Gaia\Entities
     // Use directives (A...Z)
 
     /**
-     * Class NameableCollaborationCheck
+     * Class StringRepresentationCollaborationCheck
      *
      * @package     checks\contract\Glaciersoft\Gaia\Entities
      * @author      Frederik Krautwald <frederik.krautwald@glaciersoft.com>
@@ -27,7 +27,7 @@ namespace checks\contract\Glaciersoft\Gaia\Entities
      * @link        http://glaciersoft.com
      * @since       File available since Release 1.0.0
      */
-    class NameableCollaborationCheck
+    class StringRepresentationCollaborationCheck
         extends \PHPUnit_Framework_TestCase
     {
         protected $sut;
@@ -36,7 +36,7 @@ namespace checks\contract\Glaciersoft\Gaia\Entities
         {
             $this->sut =
                 $this->getMockBuilder(
-                    'Glaciersoft\Gaia\Entities\Nameable'
+                    'Glaciersoft\Gaia\Entities\StringRepresentation'
                 )->getMock();
         }
 
@@ -48,10 +48,10 @@ namespace checks\contract\Glaciersoft\Gaia\Entities
         /**
          * @test
          */
-        public function ReturnsNamedValue()
+        public function ReturnsStringRepresentation()
         {
-            $constraint = 'value';
-            $expectedValue = 'My named value';
+            $constraint = '__toString';
+            $expectedValue = 'My string representation';
             $this->sut->expects($this->any())->method($constraint)->will(
                 $this->returnValue($expectedValue)
             );
@@ -65,4 +65,4 @@ namespace checks\contract\Glaciersoft\Gaia\Entities
     }
 }
 //
-// EOF: NameableCollaborationCheck.php
+// EOF: StringRepresentationCollaborationCheck.php
