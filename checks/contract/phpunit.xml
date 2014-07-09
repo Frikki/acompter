@@ -1,0 +1,10 @@
+<phpunit bootstrap="Bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Acompter">
+            <directory suffix="Check.php">./Glaciersoft/Acompter</directory>
+        </testsuite>
+        <testsuite name="Gaia">
+            <directory suffix="Check.php">./Glaciersoft/Gaia</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>

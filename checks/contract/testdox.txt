@@ -1,0 +1,58 @@
+checks\contract\Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitRegistrarCollaborationCheck
+ [x] Can execute
+
+checks\contract\Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitResponseRecipientCollaborationCheck
+ [x] Can get notified on successful request
+ [x] Can get notified on failed request
+
+checks\contract\Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitSpecificationCollaborationCheck
+ [x] Can return name
+ [x] Can return legal name
+ [x] Can return tax id
+ [x] Can return street address
+ [x] Can return city
+ [x] Can return state
+ [x] Can return postal code
+ [x] Can return country
+ [x] Can return phone number
+ [x] Can return fax number
+ [x] Can return email address
+ [x] Can return web site url
+ [x] Can return first month of fiscal year
+ [x] Can return administrator password
+
+checks\contract\Glaciersoft\Acompter\Entities\EconomicUnits\EconomicUnitCollaborationCheck
+ [x] Can return name
+ [x] Can return legal name
+ [x] Can return tax id
+ [x] Can return street address
+ [x] Can return city
+ [x] Can return state
+ [x] Can return postal code
+ [x] Can return country
+ [x] Can return phone number
+ [x] Can return fax number
+ [x] Can return email address
+ [x] Can return web site url
+ [x] Can return first month of fiscal year
+ [x] Can return administrator password
+
+checks\contract\Glaciersoft\Acompter\Gateways\EconomicUnitGatewayCollaborationCheck
+ [x] Can add economic unit
+ [x] Cannot add economic unit with invalid specification
+ [x] Can remove economic unit
+ [x] Cannot remove nonexisting economic unit
+ [x] Cannot remove invalid economic unit
+ [x] Can save economic unit
+ [x] Cannot save invalid economic unit
+ [x] Can by name find economic unit
+ [x] Cannot by name find nonexisting economic unit
+
+checks\contract\Glaciersoft\Gaia\Entities\NameableCollaborationCheck
+ [x] Returns named value
+
+checks\contract\Glaciersoft\Gaia\Entities\ValidatoryCollaborationCheck
+ [x] Can tell if entity is valid
+ [x] Can tell if entity is invalid
+ [x] Returns validation message
+

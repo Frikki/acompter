@@ -1,0 +1,7 @@
+/bin/*
+/docs/*
+/features/*
+/spec/*
+/vendor/*
+composer.lock
+phpspec.yml

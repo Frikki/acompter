@@ -1,0 +1,15 @@
+# behat.yml
+default:
+    paths:
+        features: checks/acceptance/features
+        bootstrap: %behat.paths.features%/bootstrap
+    formatter:
+        name: pretty,html
+        parameters:
+            output_path: null,behat_report.html
+    filters:
+        tags: "~@tbd"
+
+wip:
+    filters:
+        tags: "@wip"
