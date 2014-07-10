@@ -344,51 +344,16 @@ namespace checks\contract\Glaciersoft\Acompter\Gateways
         /**
          * @test
          */
-        public function canByNameFindEconomicUnit()
+        public function cannotFindNonexistingEconomicUnitsSpecifiedByName()
         {
             // Arrange
-            $nameToFind = 'Edelweiss Corporation';
-
-            $economicUnitStub =
-                $this->getMockForAbstractClass(
-                    'Glaciersoft\Acompter\Entities\EconomicUnit',
-                    array(),
-                    '',
-                    FALSE,
-                    TRUE,
-                    TRUE,
-                    array('name', 'isValid')
-                );
-            $economicUnitStub->expects($this->any())->method('name')->will(
-                $this->returnValue($nameToFind)
-            );
-            $economicUnitStub->expects($this->any())->method('isValid')->will(
-                $this->returnValue(TRUE)
-            );
-
-            $constraint = 'findByName';
-            $expectedValue = $economicUnitStub;
-            $this->sut->expects($this->once())->method($constraint)->with(
-                $this->equalTo($nameToFind)
-            )->will($this->returnValue($expectedValue));
-
-            // Act
-            $actualValue = $this->sut->$constraint($nameToFind);
-
-            // Assert
-            $this->assertEquals(
-                $expectedValue,
-                $actualValue
-            );
-        }
-
-        /**
-         * @test
-         */
-        public function cannotByNameFindNonexistingEconomicUnit()
-        {
-            // Arrange
-            $nameToFind = 'XyglubZwa';
+            $economicUnitSpecificationMock =
+                $this->getMockBuilder(
+                    'Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitSpecification'
+                )->getMock();
+            $economicUnitSpecificationMock->expects($this->any())->method(
+                'name'
+            )->will($this->returnValue('XybluZWG'));
 
             $economicUnitStub =
                 $this->getMockForAbstractClass(
@@ -404,14 +369,110 @@ namespace checks\contract\Glaciersoft\Acompter\Gateways
                 $this->returnValue(FALSE)
             );
 
-            $constraint = 'findByName';
+            $constraint = 'find';
             $expectedValue = $economicUnitStub;
             $this->sut->expects($this->once())->method($constraint)->with(
-                $this->equalTo($nameToFind)
+                $this->equalTo($economicUnitSpecificationMock)
             )->will($this->returnValue($expectedValue));
 
             // Act
-            $actualValue = $this->sut->$constraint($nameToFind);
+            $actualValue = $this->sut->$constraint($economicUnitSpecificationMock);
+
+            // Assert
+            $this->assertEquals(
+                $expectedValue,
+                $actualValue
+            );
+        }
+
+        /**
+         * @test
+         */
+        public function canFindOneEconomicUnitSpecifiedByName()
+        {
+            // Arrange
+            $name = 'Edelweiss Corporation';
+            $economicUnitSpecificationMock =
+                $this->getMockBuilder(
+                    'Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitSpecification'
+                )->getMock();
+            $economicUnitSpecificationMock->expects($this->any())->method(
+                'name'
+            )->will($this->returnValue($name));
+
+            $economicUnitStub =
+                $this->getMockForAbstractClass(
+                    'Glaciersoft\Acompter\Entities\EconomicUnit',
+                    array(),
+                    '',
+                    FALSE,
+                    TRUE,
+                    TRUE,
+                    array('name', 'isValid')
+                );
+            $economicUnitStub->expects($this->any())->method('name')->will(
+                $this->returnValue($name)
+            );
+            $economicUnitStub->expects($this->any())->method('isValid')->will(
+                $this->returnValue(TRUE)
+            );
+
+            $constraint = 'find';
+            $expectedValue = $economicUnitStub;
+            $this->sut->expects($this->once())->method($constraint)->with(
+                $this->equalTo($economicUnitSpecificationMock)
+            )->will($this->returnValue($expectedValue));
+
+            // Act
+            $actualValue = $this->sut->$constraint($economicUnitSpecificationMock);
+
+            // Assert
+            $this->assertEquals(
+                $expectedValue,
+                $actualValue
+            );
+        }
+
+        /**
+         * @test
+         */
+        public function canFindAllEconomicUnitsSpecifiedByNameWildcard()
+        {
+            // Arrange
+            $name = '*';
+            $economicUnitSpecificationMock =
+                $this->getMockBuilder(
+                    'Glaciersoft\Acompter\Boundaries\EconomicUnits\EconomicUnitSpecification'
+                )->getMock();
+            $economicUnitSpecificationMock->expects($this->any())->method(
+                'name'
+            )->will($this->returnValue($name));
+
+            $economicUnitStub =
+                $this->getMockForAbstractClass(
+                    'Glaciersoft\Acompter\Entities\EconomicUnit',
+                    array(),
+                    '',
+                    FALSE,
+                    TRUE,
+                    TRUE,
+                    array('name', 'isValid')
+                );
+            $economicUnitStub->expects($this->any())->method('name')->will(
+                $this->returnValue($name)
+            );
+            $economicUnitStub->expects($this->any())->method('isValid')->will(
+                $this->returnValue(TRUE)
+            );
+
+            $constraint = 'find';
+            $expectedValue = $economicUnitStub;
+            $this->sut->expects($this->once())->method($constraint)->with(
+                $this->equalTo($economicUnitSpecificationMock)
+            )->will($this->returnValue($expectedValue));
+
+            // Act
+            $actualValue = $this->sut->$constraint($economicUnitSpecificationMock);
 
             // Assert
             $this->assertEquals(
