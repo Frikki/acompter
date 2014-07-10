@@ -37,6 +37,17 @@ checks\contract\Glaciersoft\Acompter\Entities\EconomicUnits\EconomicUnitCollabor
  [x] Can return first month of fiscal year
  [x] Can return administrator password
 
+checks\contract\Glaciersoft\Acompter\Entities\EconomicUnits\EconomicUnitListCollaborationCheck
+ [x] Can hold list of economic units
+ [x] Can append economic unit
+ [x] Cannot append string
+ [x] Cannot append integer
+ [x] Cannot append double
+ [x] Can offset set economic unit
+ [x] Cannot offset set string
+ [x] Cannot offset set integer
+ [x] Cannot offset set double
+
 checks\contract\Glaciersoft\Acompter\Gateways\EconomicUnitGatewayCollaborationCheck
  [x] Can add economic unit
  [x] Cannot add economic unit with invalid specification
@@ -45,11 +56,12 @@ checks\contract\Glaciersoft\Acompter\Gateways\EconomicUnitGatewayCollaborationCh
  [x] Cannot remove invalid economic unit
  [x] Can save economic unit
  [x] Cannot save invalid economic unit
- [x] Can by name find economic unit
- [x] Cannot by name find nonexisting economic unit
+ [x] Cannot find nonexisting economic units specified by name
+ [x] Can find one economic unit specified by name
+ [x] Can find all economic units specified by name wildcard
 
-checks\contract\Glaciersoft\Gaia\Entities\NameableCollaborationCheck
- [x] Returns named value
+checks\contract\Glaciersoft\Gaia\Entities\StringRepresentationCollaborationCheck
+ [x] Returns string representation
 
 checks\contract\Glaciersoft\Gaia\Entities\ValidatoryCollaborationCheck
  [x] Can tell if entity is valid
