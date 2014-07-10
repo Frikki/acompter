@@ -1,6 +1,6 @@
 # features/register_economic_unit_api.feature
 Feature: register_economic_unit_api
-  In order to let a UI register an economic unit
+  In order to register an economic unit through a UI
   As a developer
   I need be able to register an economic unit
 
