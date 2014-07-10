@@ -53,11 +53,11 @@ namespace Glaciersoft\Acompter\Gateways
         public function save(EconomicUnit $economicUnit);
 
         /**
-         * @param $name
+         * @param EconomicUnitSpecification $economicUnitSpecification
          *
          * @return EconomicUnit
          */
-        public function findByName($name);
+        public function find(EconomicUnitSpecification $economicUnitSpecification);
     }
 }
 //
